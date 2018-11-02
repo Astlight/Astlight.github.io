@@ -1183,7 +1183,7 @@ pre .javascript .function {
   font-size: 15px;
   line-height: inherit;
   border-bottom: 2px solid transparent;
-  border-radius: 20px;
+  border-radius: 10px;
   transition-property: border-color;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
@@ -1191,6 +1191,7 @@ pre .javascript .function {
   color: #000;
   font-weight: bold;
   background: #fff;
+  opacity: 0.8;
 }
 .menu .menu-item a:hover {
   border-bottom-color: #222;
@@ -1820,7 +1821,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #3d09ff;
+  background: #ab52ed;
 }
 .links-of-blogroll {
   font-size: 13px;
