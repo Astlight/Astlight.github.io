@@ -337,8 +337,7 @@
       
         
           
-            <p>本文原文地址：<a href="https://tech.glowing.com/cn/cong-python2-7-qian-yi-dao-python3-6/" target="_blank" rel="noopener">https://tech.glowing.com/cn/cong-python2-7-qian-yi-dao-python3-6/</a></p>
-<p>python2.7 会在 2020 年停止维护, 很多第三方包也在去掉对 python2.7 的支持, 最近终于完成了内部代码向 python3 的迁移, 整个过程挺繁琐的, 记录一下.</p>
+            <p>python2.7 会在 2020 年停止维护, 很多第三方包也在去掉对 python2.7 的支持, 最近终于完成了内部代码向 python3 的迁移, 整个过程挺繁琐的, 记录一下.</p>
 <p>做之前确保已读过官方的 migration guide: <a href="https://docs.python.org/3/howto/pyporting.html" target="_blank" rel="noopener">https://docs.python.org/3/howto/pyporting.html</a></p>
 <p>我的大致步骤:</p>
 <ol>
@@ -423,6 +422,7 @@
 <li>跨网络调用, 文件读写的地方一般都会有 str/unicode 的问题</li>
 <li>老代码里显示写 <code>.encode(&#39;utf-8&#39;)</code> 的地方在 py3 下基本都有问题.</li>
 </ul>
+<p>本文原文地址：<a href="https://tech.glowing.com/cn/cong-python2-7-qian-yi-dao-python3-6/" target="_blank" rel="noopener">https://tech.glowing.com/cn/cong-python2-7-qian-yi-dao-python3-6/</a></p>
 
           
         
@@ -542,8 +542,7 @@
       
         
           
-            <p>本文原文地址：<a href="http://cenalulu.github.io/python/gil-in-python/" target="_blank" rel="noopener">http://cenalulu.github.io/python/gil-in-python/</a></p>
-<p><strong>GIL是什么</strong></p>
+            <p><strong>GIL是什么</strong></p>
 <p>首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的JPython就没有GIL。然而因为CPython是大部分环境下默认的Python执行环境。所以在很多人的概念里CPython就是Python，也就想当然的把GIL归结为Python语言的缺陷。所以这里要先明确一点：GIL并不是Python的特性，Python完全可以不依赖于GIL。</p>
 <p>那么CPython实现中的GIL又是什么呢？GIL全称Global Interpreter Lock为了避免误导，我们还是来看一下官方给出的解释：</p>
 <blockquote>
@@ -595,6 +594,7 @@
 </ul>
 </li>
 </ul>
+<p>本文原文地址：<a href="http://cenalulu.github.io/python/gil-in-python/" target="_blank" rel="noopener">http://cenalulu.github.io/python/gil-in-python/</a></p>
 
           
         

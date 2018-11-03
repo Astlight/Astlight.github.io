@@ -94,21 +94,21 @@
 
 
 
-<meta name="description" content="本文原文地址：http://cenalulu.github.io/python/gil-in-python/ GIL是什么 首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python">
+<meta name="description" content="GIL是什么 首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的J">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python中GIL的相关解释，多线程性能究竟如何？">
 <meta property="og:url" content="http://yoursite.com/posts/undefined/index.html">
 <meta property="og:site_name" content="AstlightBlogs">
-<meta property="og:description" content="本文原文地址：http://cenalulu.github.io/python/gil-in-python/ GIL是什么 首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python">
+<meta property="og:description" content="GIL是什么 首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的J">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/aa213e02jw1eujep41uokj22yh1617wh.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/aa213e02jw1eujep4hiebj20mx02gdg0.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw690/aa213e02jw1eujep4uxhgj20mx04cweq.jpg">
-<meta property="og:updated_time" content="2018-11-03T02:03:18.868Z">
+<meta property="og:updated_time" content="2018-11-03T03:04:40.879Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python中GIL的相关解释，多线程性能究竟如何？">
-<meta name="twitter:description" content="本文原文地址：http://cenalulu.github.io/python/gil-in-python/ GIL是什么 首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python">
+<meta name="twitter:description" content="GIL是什么 首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的J">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/aa213e02jw1eujep41uokj22yh1617wh.jpg">
 
 
@@ -339,8 +339,7 @@
       
 
       
-        <p>本文原文地址：<a href="http://cenalulu.github.io/python/gil-in-python/" target="_blank" rel="noopener">http://cenalulu.github.io/python/gil-in-python/</a></p>
-<p><strong>GIL是什么</strong></p>
+        <p><strong>GIL是什么</strong></p>
 <p>首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的JPython就没有GIL。然而因为CPython是大部分环境下默认的Python执行环境。所以在很多人的概念里CPython就是Python，也就想当然的把GIL归结为Python语言的缺陷。所以这里要先明确一点：GIL并不是Python的特性，Python完全可以不依赖于GIL。</p>
 <p>那么CPython实现中的GIL又是什么呢？GIL全称Global Interpreter Lock为了避免误导，我们还是来看一下官方给出的解释：</p>
 <blockquote>
@@ -392,6 +391,7 @@
 </ul>
 </li>
 </ul>
+<p>本文原文地址：<a href="http://cenalulu.github.io/python/gil-in-python/" target="_blank" rel="noopener">http://cenalulu.github.io/python/gil-in-python/</a></p>
 
       
     </div>
