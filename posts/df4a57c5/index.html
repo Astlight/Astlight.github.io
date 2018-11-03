@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="算法,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="快速排序1234567def qsort(L):    if len(L) &amp;lt;= 1: return L # 判断列表长度是否小于等于1， 如果小于等于1，直接返回列表    return qsort([lt for lt in L[1:] if lt &amp;lt; L[0]]) + L[0:1]+ qsort([ge for ge in L[1:] if ge &amp;gt;= L[0]])	# 第">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见算法的Python实现">
+<meta property="og:url" content="http://yoursite.com/posts/df4a57c5/index.html">
+<meta property="og:site_name" content="AstlightBlogs">
+<meta property="og:description" content="快速排序1234567def qsort(L):    if len(L) &amp;lt;= 1: return L # 判断列表长度是否小于等于1， 如果小于等于1，直接返回列表    return qsort([lt for lt in L[1:] if lt &amp;lt; L[0]]) + L[0:1]+ qsort([ge for ge in L[1:] if ge &amp;gt;= L[0]])	# 第">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://camo.githubusercontent.com/bd81dd5a27c84d8446446f3eaa09d2bf940c76d2/687474703a2f2f68692e6373646e2e6e65742f6174746163686d656e742f3230313130362f32382f305f313330393234343133364d574c502e676966">
+<meta property="og:updated_time" content="2018-11-03T11:18:09.152Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常见算法的Python实现">
+<meta name="twitter:description" content="快速排序1234567def qsort(L):    if len(L) &amp;lt;= 1: return L # 判断列表长度是否小于等于1， 如果小于等于1，直接返回列表    return qsort([lt for lt in L[1:] if lt &amp;lt; L[0]]) + L[0:1]+ qsort([ge for ge in L[1:] if ge &amp;gt;= L[0]])	# 第">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/bd81dd5a27c84d8446446f3eaa09d2bf940c76d2/687474703a2f2f68692e6373646e2e6e65742f6174746163686d656e742f3230313130362f32382f305f313330393234343133364d574c502e676966">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/df4a57c5/">
+
+
+
+
+
+  <title>常见算法的Python实现 | AstlightBlogs</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- undefined -->
+<!--   
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+ -->
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AstlightBlogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/df4a57c5/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿斯顿发光">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://mmbiz.qpic.cn/mmbiz_jpg/ibGeqiconkZdzhBHFfR42qVycZ8A6yaxUcpc2fGXZAEsjLtHxftZIpUYSscAVH8c90GrD0iamBVbMQZibiaWeBriaxxg/0?wx_fmt=jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AstlightBlogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常见算法的Python实现</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T18:42:02+08:00">
+                2017-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3.4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  17
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">qsort</span><span class="params">(L)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(L) &lt;= <span class="number">1</span>: <span class="keyword">return</span> L <span class="comment"># 判断列表长度是否小于等于1， 如果小于等于1，直接返回列表</span></span><br><span class="line">    <span class="keyword">return</span> qsort([lt <span class="keyword">for</span> lt <span class="keyword">in</span> L[<span class="number">1</span>:] <span class="keyword">if</span> lt &lt; L[<span class="number">0</span>]]) + L[<span class="number">0</span>:<span class="number">1</span>]+ qsort([ge <span class="keyword">for</span> ge <span class="keyword">in</span> L[<span class="number">1</span>:] <span class="keyword">if</span> ge &gt;= L[<span class="number">0</span>]])</span><br><span class="line">	<span class="comment"># 第4行：返回递归函数拼接的列表，[lt for lt in L[1:] if lt &lt;= L[0]] 列表推导表达式，返回一个比 L[0] 小的列表，[ge for ge in L[1:] if ge &gt;= L[0]], 返回一个比L[0] 大的列表， 再加上L[0] 就构成完整的列表</span></span><br><span class="line"></span><br><span class="line">L = [<span class="number">3</span>,<span class="number">14</span>,<span class="number">2</span>,<span class="number">12</span>,<span class="number">9</span>,<span class="number">33</span>,<span class="number">99</span>,<span class="number">35</span>]</span><br><span class="line">qsort(iList)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p><strong>相邻两个元素作比较，大的放右侧。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bubble_sort</span><span class="params">(my_list)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(my_list)<span class="number">-1</span>, <span class="number">0</span>, <span class="number">-1</span>): <span class="comment"># 6、5、4、3、2、1 ★ 倒数减少内层冒泡次数</span></span><br><span class="line">        count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(j): ★ <span class="comment">#  j控制冒泡次数递减</span></span><br><span class="line">            <span class="keyword">if</span> my_list[i] &gt; my_list[i + <span class="number">1</span>]:</span><br><span class="line">                my_list[i], my_list[i + <span class="number">1</span>] = my_list[i + <span class="number">1</span>], my_list[i]</span><br><span class="line">                count += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">        <span class="keyword">if</span> count == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">my_list = [<span class="number">7</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">67</span>, <span class="number">34</span>, <span class="number">1</span>, <span class="number">8</span>]</span><br><span class="line">bubble_sort(my_list)</span><br><span class="line">print(my_list)  <span class="comment"># [1, 3, 4, 7, 8, 34, 67]</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><p><strong>[有序序列] | [待排元素] | [无序序列]</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insertSort</span><span class="params">(arr)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(arr)):  <span class="comment"># 1-5</span></span><br><span class="line">        x = arr[i]  <span class="comment"># 当前排序的关键字赋值给x，从第二位开始</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i, <span class="number">-1</span>, <span class="number">-1</span>):  <span class="comment"># 10|210|3210|43210|543210</span></span><br><span class="line">            <span class="comment"># j为当前位置，试探j-1位置</span></span><br><span class="line">            <span class="keyword">if</span> x &lt; arr[j - <span class="number">1</span>]:  <span class="comment"># 如果 j位置 小于 j-1位置。</span></span><br><span class="line">                arr[j] = arr[j - <span class="number">1</span>]  <span class="comment"># 将左侧j-1位置，复制至右侧j位置</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 位置确定为j</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="string">'''</span></span><br><span class="line"><span class="string">            移动轨迹</span></span><br><span class="line"><span class="string">            [4,7,8,2,3,5]</span></span><br><span class="line"><span class="string">            [4,7,8,8,3,5]</span></span><br><span class="line"><span class="string">            [4,7,7,8,3,5]</span></span><br><span class="line"><span class="string">            [4,4,7,8,3,5]</span></span><br><span class="line"><span class="string">            [2,4,7,8,3,5]</span></span><br><span class="line"><span class="string">            '''</span></span><br><span class="line">        arr[j] = x</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">arr = [<span class="number">4</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>]</span><br><span class="line">insertSort(arr)</span><br><span class="line">print(arr)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p><strong>每一轮，按下标顺序，每个下标位置与右侧所有下标位置进行比较，如果左侧小则交换关键字</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">selectedSort</span><span class="params">(my_list)</span>:</span></span><br><span class="line">    <span class="comment"># 获取list的长度</span></span><br><span class="line">    length = len(my_list)  <span class="comment"># 5</span></span><br><span class="line">    <span class="comment"># 一共进行多少轮比较</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(length - <span class="number">1</span>):</span><br><span class="line">        <span class="comment"># 默认设置最小值得index为当前值</span></span><br><span class="line">        min_num = i  <span class="comment"># 0、1、2、3、 外层保持不变，内层循环</span></span><br><span class="line">        <span class="comment"># 用当先最小index的值分别与后面的值进行比较,以便获取最小index</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i + <span class="number">1</span>, length):  <span class="comment"># 1、2、3、4</span></span><br><span class="line">            <span class="comment"># 如果找到比当前值小的index,则进行两值交换</span></span><br><span class="line">            <span class="keyword">if</span> my_list[j] &lt; my_list[min_num]:  <span class="comment"># 0 &lt; 1</span></span><br><span class="line">                my_list[j], my_list[min_num] = my_list[min_num], my_list[j]</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 打印每一轮比较好的列表</span></span><br><span class="line">                <span class="string">'''</span></span><br><span class="line"><span class="string">                myList =    [9, 1, 4, 5, 0, 6, 1]</span></span><br><span class="line"><span class="string">                Round  0 :  [0, 9, 4, 5, 1, 6, 1]</span></span><br><span class="line"><span class="string">                Round  1 :  [0, 1, 9, 5, 4, 6, 1]</span></span><br><span class="line"><span class="string">                Round  2 :  [0, 1, 1, 9, 5, 6, 4]</span></span><br><span class="line"><span class="string">                Round  3 :  [0, 1, 1, 4, 9, 6, 5]</span></span><br><span class="line"><span class="string">                Round  4 :  [0, 1, 1, 4, 5, 9, 6]</span></span><br><span class="line"><span class="string">                Round  5 :  [0, 1, 1, 4, 5, 6, 9]</span></span><br><span class="line"><span class="string">                '''</span></span><br><span class="line"></span><br><span class="line">my_list = [<span class="number">9</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">1</span>]</span><br><span class="line">selectedSort(my_list)</span><br><span class="line">print(my_list)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h1><p>​      <strong>第一次增量的取法为： d=count/2;</strong></p>
+<p>​      <strong>第二次增量的取法为:  d=(count/2)/2;</strong></p>
+<p>​      <strong>最后一直到: d=1;</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">shell_sort</span><span class="params">(nums)</span>:</span></span><br><span class="line">    n=len(nums)</span><br><span class="line">    gap=n//<span class="number">2</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> gap&gt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(gap,n):</span><br><span class="line">            i=j</span><br><span class="line">            <span class="keyword">while</span> i&gt;<span class="number">0</span>:</span><br><span class="line">                <span class="keyword">if</span> nums[i]&lt;nums[i-gap]:</span><br><span class="line">                    nums[i],nums[i-gap]=nums[i-gap],nums[i]</span><br><span class="line">                    i-=gap</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        gap//=<span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> nums</span><br><span class="line">h=shell_sort([<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>])</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="二分查找递归"><a href="#二分查找递归" class="headerlink" title="二分查找递归"></a>二分查找递归</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span><span class="params">(alist, target)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(alist) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        mid = len(alist) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> alist[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> target &lt; alist[mid]:</span><br><span class="line">                <span class="keyword">return</span> binary_search(alist[:mid], target)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> binary_search(alist[mid + <span class="number">1</span>:], target)</span><br><span class="line"></span><br><span class="line">testlist = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">32</span>, <span class="number">42</span>,]</span><br><span class="line">print(binary_search(testlist, <span class="number">13</span>))</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span><span class="params">(alist, target)</span>:</span></span><br><span class="line">      first = <span class="number">0</span></span><br><span class="line">      last = len(alist)<span class="number">-1</span></span><br><span class="line">      <span class="keyword">while</span> first&lt;=last:</span><br><span class="line">          mid = (first + last)/<span class="number">2</span></span><br><span class="line">          <span class="keyword">if</span> alist[mid] == target:</span><br><span class="line">              <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">          <span class="keyword">elif</span> item &lt; alist[mid]:</span><br><span class="line">              target = midpoint<span class="number">-1</span></span><br><span class="line">          <span class="keyword">else</span>:</span><br><span class="line">              first = midpoint+<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">alist = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">32</span>, <span class="number">42</span>,]</span><br><span class="line">print(binary_search(testlist, <span class="number">13</span>))</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span><span class="params">(alist)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(alist) &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> alist</span><br><span class="line">    num = int(len(alist)/<span class="number">2</span>)   <span class="comment"># 二分分解</span></span><br><span class="line">    left = merge_sort(alist[:num])</span><br><span class="line">    right = merge_sort(alist[num:])</span><br><span class="line">    <span class="keyword">return</span> merge(left, right)  <span class="comment"># 合并</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(left, right)</span>:</span></span><br><span class="line">    <span class="string">'''合并操作，将两个有序数组left[]和right[]合并成一个大的有序数组'''</span></span><br><span class="line">    <span class="comment"># left与right的下标指针</span></span><br><span class="line">    l, r = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="keyword">while</span> l &lt; len(left) <span class="keyword">and</span> r &lt; len(right):</span><br><span class="line">        <span class="keyword">if</span> left[l] &lt; right[r]:</span><br><span class="line">            result.append(left[l])</span><br><span class="line">            l += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result.append(right[r])</span><br><span class="line">            r += <span class="number">1</span></span><br><span class="line">    result += left[l:]</span><br><span class="line">    result += right[r:]</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">alist = [<span class="number">54</span>, <span class="number">26</span>, <span class="number">93</span>, <span class="number">17</span>, <span class="number">77</span>, <span class="number">31</span>, <span class="number">44</span>, <span class="number">55</span>, <span class="number">20</span>]</span><br><span class="line">sorted_alist = merge_sort(alist)</span><br><span class="line">print(sorted_alist)</span><br></pre></td></tr></table></figure>
+<h1 id="全排列"><a href="#全排列" class="headerlink" title="全排列"></a>全排列</h1><p><strong>素材列表中元素不可以重复使用</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tmp_list = itertools.permutations([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]) </span><br><span class="line">res_list=[] </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> tmp_list: </span><br><span class="line">	res_list.append(i) </span><br><span class="line"><span class="comment"># [(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]</span></span><br></pre></td></tr></table></figure>
+<p><strong>素材列表中元素可以重复使用， 但是输出不能重复</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">num_list=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">num=len([num_list]) </span><br><span class="line">res_list=list(product(num_list,repeat=num)) </span><br><span class="line"><span class="comment"># [(1, 1, 1), (1, 1, 2), (1, 1, 3), (1, 2, 1), (1, 2, 2), (1, 2, 3), (1, 3, 1), (1, 3, 2), (1, 3, 3), (2, 1, 1), (2, 1, 2), (2, 1, 3), (2, 2, 1), (2, 2, 2), (2, 2, 3), (2, 3, 1), (2, 3, 2), (2, 3, 3), (3, 1, 1), (3, 1, 2), (3, 1, 3), (3, 2, 1), (3, 2, 2), (3, 2, 3), (3, 3, 1), (3, 3, 2), (3, 3, 3)]</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="全组合"><a href="#全组合" class="headerlink" title="全组合"></a>全组合</h1><p><strong>素材列表中元素不允许重复使用，不限输出结果的元素个数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num_list=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">res_list=[] </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(num_list)+<span class="number">1</span>): </span><br><span class="line">	res_list+=list(combinations(num_list, i)) </span><br><span class="line"><span class="comment"># [(), (1,), (2,), (3,), (1, 2), (1, 3), (2, 3), (1, 2, 3)]</span></span><br></pre></td></tr></table></figure>
+<p><strong>素材列表中的元素可以重复使用，不限输出结果的元素个数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">res_list=[] </span><br><span class="line">num_list1=[str(i) <span class="keyword">for</span> i <span class="keyword">in</span> num_list] </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(num_list)+<span class="number">1</span>): </span><br><span class="line">	res_list+=[<span class="string">''</span>.join(x) <span class="keyword">for</span> x <span class="keyword">in</span> itertools.product(*[num_list1] * i)]</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="变态台阶问题"><a href="#变态台阶问题" class="headerlink" title="变态台阶问题"></a>变态台阶问题</h1><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。求该青蛙跳上一个n级的台阶总共有多少种跳法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fib = <span class="keyword">lambda</span> n: n <span class="keyword">if</span> n &lt; <span class="number">2</span> <span class="keyword">else</span> <span class="number">2</span> * fib(n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="矩形覆盖"><a href="#矩形覆盖" class="headerlink" title="矩形覆盖"></a>矩形覆盖</h1><p><strong>我们可以用<code>2*1</code>的小矩形横着或者竖着去覆盖更大的矩形。请问用n个<code>2*1</code>的小矩形无重叠地覆盖一个<code>2*n</code>的大矩形，总共有多少种方法？</strong></p>
+<blockquote>
+<p>第<code>2*n</code>个矩形的覆盖方法等于第<code>2*(n-1)</code>加上第<code>2*(n-2)</code>的方法。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> n: <span class="number">1</span> <span class="keyword">if</span> n &lt; <span class="number">2</span> <span class="keyword">else</span> f(n - <span class="number">1</span>) + f(n - <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="杨氏矩阵查找"><a href="#杨氏矩阵查找" class="headerlink" title="杨氏矩阵查找"></a>杨氏矩阵查找</h1><p><strong>在一个m行n列二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</strong></p>
+<p>使用Step-wise线性搜索。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_value</span><span class="params">(l, r, c)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> l[r][c]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(l, x)</span>:</span></span><br><span class="line">    m = len(l) - <span class="number">1</span></span><br><span class="line">    n = len(l[<span class="number">0</span>]) - <span class="number">1</span></span><br><span class="line">    r = <span class="number">0</span></span><br><span class="line">    c = n</span><br><span class="line">    <span class="keyword">while</span> c &gt;= <span class="number">0</span> <span class="keyword">and</span> r &lt;= m:</span><br><span class="line">        value = get_value(l, r, c)</span><br><span class="line">        <span class="keyword">if</span> value == x:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">elif</span> value &gt; x:</span><br><span class="line">            c = c - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> value &lt; x:</span><br><span class="line">            r = r + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="去除列表中的重复元素"><a href="#去除列表中的重复元素" class="headerlink" title="去除列表中的重复元素"></a>去除列表中的重复元素</h1><p><strong>用集合</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(set(l))</span><br></pre></td></tr></table></figure>
+<p><strong>用字典</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'a'</span>]</span><br><span class="line">l2 = &#123;&#125;.fromkeys(l1).keys()</span><br><span class="line"><span class="keyword">print</span> l2</span><br></pre></td></tr></table></figure>
+<p><strong>用字典并保持顺序</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">l1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'a'</span>]</span><br><span class="line">l2 = list(set(l1))</span><br><span class="line">l2.sort(key=l1.index)</span><br><span class="line"><span class="keyword">print</span> l2</span><br></pre></td></tr></table></figure>
+<p><strong>列表推导式</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l1 = [<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'a'</span>,<span class="string">'a'</span>]</span><br><span class="line">l2 = []</span><br><span class="line">[l2.append(i) <span class="keyword">for</span> i <span class="keyword">in</span> l1 <span class="keyword">if</span> <span class="keyword">not</span> i <span class="keyword">in</span> l2]</span><br></pre></td></tr></table></figure>
+<p><strong>sorted排序并且用列表推导式.</strong></p>
+<p><strong>l = [‘b’,’c’,’d’,’b’,’c’,’a’,’a’][single.append(i) for i in sorted(l) if i not in single] print single</strong></p>
+<hr>
+<p>链表成对调换</p>
+<p><strong><code>1-&gt;2-&gt;3-&gt;4</code>转换成<code>2-&gt;1-&gt;4-&gt;3</code>.</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># @param a ListNode</span></span><br><span class="line">    <span class="comment"># @return a ListNode</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">swapPairs</span><span class="params">(self, head)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> head != <span class="keyword">None</span> <span class="keyword">and</span> head.next != <span class="keyword">None</span>:</span><br><span class="line">            next = head.next</span><br><span class="line">            head.next = self.swapPairs(next.next)</span><br><span class="line">            next.next = head</span><br><span class="line">            <span class="keyword">return</span> next</span><br><span class="line">        <span class="keyword">return</span> head</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="创建字典的方法"><a href="#创建字典的方法" class="headerlink" title="创建字典的方法"></a>创建字典的方法</h1><h3 id="直接创建"><a href="#直接创建" class="headerlink" title="直接创建"></a>直接创建</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;<span class="string">'name'</span>:<span class="string">'earth'</span>, <span class="string">'port'</span>:<span class="string">'80'</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="工厂方法"><a href="#工厂方法" class="headerlink" title="工厂方法"></a>工厂方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items=[(<span class="string">'name'</span>,<span class="string">'earth'</span>),(<span class="string">'port'</span>,<span class="string">'80'</span>)]</span><br><span class="line">dict2=dict(items)</span><br><span class="line">dict1=dict(([<span class="string">'name'</span>,<span class="string">'earth'</span>],[<span class="string">'port'</span>,<span class="string">'80'</span>]))</span><br></pre></td></tr></table></figure>
+<h3 id="fromkeys-方法"><a href="#fromkeys-方法" class="headerlink" title="fromkeys()方法"></a>fromkeys()方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dict1=&#123;&#125;.fromkeys((<span class="string">'x'</span>,<span class="string">'y'</span>),<span class="number">-1</span>)</span><br><span class="line">dict=&#123;<span class="string">'x'</span>:<span class="number">-1</span>,<span class="string">'y'</span>:<span class="number">-1</span>&#125;</span><br><span class="line">dict2=&#123;&#125;.fromkeys((<span class="string">'x'</span>,<span class="string">'y'</span>))</span><br><span class="line">dict2=&#123;<span class="string">'x'</span>:<span class="keyword">None</span>, <span class="string">'y'</span>:<span class="keyword">None</span>&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="合并两个有序列表"><a href="#合并两个有序列表" class="headerlink" title="合并两个有序列表"></a>合并两个有序列表</h1><p><strong>知乎远程面试要求编程</strong></p>
+<blockquote>
+<p>尾递归</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_recursion_merge_sort2</span><span class="params">(l1, l2, tmp)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(l1) == <span class="number">0</span> <span class="keyword">or</span> len(l2) == <span class="number">0</span>:</span><br><span class="line">        tmp.extend(l1)</span><br><span class="line">        tmp.extend(l2)</span><br><span class="line">        <span class="keyword">return</span> tmp</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> l1[<span class="number">0</span>] &lt; l2[<span class="number">0</span>]:</span><br><span class="line">            tmp.append(l1[<span class="number">0</span>])</span><br><span class="line">            <span class="keyword">del</span> l1[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            tmp.append(l2[<span class="number">0</span>])</span><br><span class="line">            <span class="keyword">del</span> l2[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> _recursion_merge_sort2(l1, l2, tmp)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">recursion_merge_sort2</span><span class="params">(l1, l2)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> _recursion_merge_sort2(l1, l2, [])</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>循环算法</p>
+</blockquote>
+<p><strong>思路：</strong></p>
+<p><strong>定义一个新的空列表</strong></p>
+<p><strong>比较两个列表的首个元素</strong></p>
+<p><strong>小的就插入到新列表里</strong></p>
+<p><strong>把已经插入新列表的元素从旧列表删除</strong></p>
+<p><strong>直到两个旧列表有一个为空</strong></p>
+<p><strong>再把旧列表加到新列表后面</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loop_merge_sort</span><span class="params">(l1, l2)</span>:</span></span><br><span class="line">    tmp = []</span><br><span class="line">    <span class="keyword">while</span> len(l1) &gt; <span class="number">0</span> <span class="keyword">and</span> len(l2) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> l1[<span class="number">0</span>] &lt; l2[<span class="number">0</span>]:</span><br><span class="line">            tmp.append(l1[<span class="number">0</span>])</span><br><span class="line">            <span class="keyword">del</span> l1[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            tmp.append(l2[<span class="number">0</span>])</span><br><span class="line">            <span class="keyword">del</span> l2[<span class="number">0</span>]</span><br><span class="line">    tmp.extend(l1)</span><br><span class="line">    tmp.extend(l2)</span><br><span class="line">    <span class="keyword">return</span> tmp</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>pop弹出</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">7</span>]</span><br><span class="line">b = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sortedlist</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    c = []</span><br><span class="line">    <span class="keyword">while</span> a <span class="keyword">and</span> b:</span><br><span class="line">        <span class="keyword">if</span> a[<span class="number">0</span>] &gt;= b[<span class="number">0</span>]:</span><br><span class="line">            c.append(b.pop(<span class="number">0</span>))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            c.append(a.pop(<span class="number">0</span>))</span><br><span class="line">    <span class="keyword">while</span> a:</span><br><span class="line">        c.append(a.pop(<span class="number">0</span>))</span><br><span class="line">    <span class="keyword">while</span> b:</span><br><span class="line">        c.append(b.pop(<span class="number">0</span>))</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"><span class="keyword">print</span> merge_sortedlist(a,b)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="交叉链表求交点"><a href="#交叉链表求交点" class="headerlink" title="交叉链表求交点"></a>交叉链表求交点</h1><blockquote>
+<p>其实思想可以按照从尾开始比较两个链表，如果相交，则从尾开始必然一致，只要从尾开始比较，直至不一致的地方即为交叉点，如图所示</p>
+</blockquote>
+<p><a href="https://camo.githubusercontent.com/bd81dd5a27c84d8446446f3eaa09d2bf940c76d2/687474703a2f2f68692e6373646e2e6e65742f6174746163686d656e742f3230313130362f32382f305f313330393234343133364d574c502e676966" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/bd81dd5a27c84d8446446f3eaa09d2bf940c76d2/687474703a2f2f68692e6373646e2e6e65742f6174746163686d656e742f3230313130362f32382f305f313330393234343133364d574c502e676966" alt="img"></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用a,b两个list来模拟链表，可以看出交叉点是 7这个节点</span></span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">5</span>]</span><br><span class="line">b = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">1</span>,<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,min(len(a),len(b))):</span><br><span class="line">    <span class="keyword">if</span> i==<span class="number">1</span> <span class="keyword">and</span> (a[<span class="number">-1</span>] != b[<span class="number">-1</span>]):</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"No"</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">if</span> a[-i] != b[-i]:</span><br><span class="line">            <span class="keyword">print</span> <span class="string">"交叉节点："</span>,a[-i+<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>另外一种比较正规的方法，构造链表类</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">node</span><span class="params">(l1, l2)</span>:</span></span><br><span class="line">    length1, lenth2 = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="comment"># 求两个链表长度</span></span><br><span class="line">    <span class="keyword">while</span> l1.next:</span><br><span class="line">        l1 = l1.next</span><br><span class="line">        length1 += <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> l2.next:</span><br><span class="line">        l2 = l2.next</span><br><span class="line">        length2 += <span class="number">1</span></span><br><span class="line">    <span class="comment"># 长的链表先走</span></span><br><span class="line">    <span class="keyword">if</span> length1 &gt; lenth2:</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> range(length1 - length2):</span><br><span class="line">            l1 = l1.next</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> range(length2 - length1):</span><br><span class="line">            l2 = l2.next</span><br><span class="line">    <span class="keyword">while</span> l1 <span class="keyword">and</span> l2:</span><br><span class="line">        <span class="keyword">if</span> l1.next == l2.next:</span><br><span class="line">            <span class="keyword">return</span> l1.next</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            l1 = l1.next</span><br><span class="line">            l2 = l2.next</span><br></pre></td></tr></table></figure>
+<p>修改了一下:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">node</span><span class="params">(l1, l2)</span>:</span></span><br><span class="line">    length1, length2 = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="comment"># 求两个链表长度</span></span><br><span class="line">    <span class="keyword">while</span> l1.next:</span><br><span class="line">        l1 = l1.next<span class="comment">#尾节点</span></span><br><span class="line">        length1 += <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> l2.next:</span><br><span class="line">        l2 = l2.next<span class="comment">#尾节点</span></span><br><span class="line">        length2 += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#如果相交</span></span><br><span class="line">    <span class="keyword">if</span> l1.next == l2.next:</span><br><span class="line">        <span class="comment"># 长的链表先走</span></span><br><span class="line">        <span class="keyword">if</span> length1 &gt; length2:</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(length1 - length2):</span><br><span class="line">                l1 = l1.next</span><br><span class="line">            <span class="keyword">return</span> l1<span class="comment">#返回交点</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> range(length2 - length1):</span><br><span class="line">                l2 = l2.next</span><br><span class="line">            <span class="keyword">return</span> l2<span class="comment">#返回交点</span></span><br><span class="line">    <span class="comment"># 如果不相交</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+<p><strong>思路: <a href="http://humaoli.blog.163.com/blog/static/13346651820141125102125995/" target="_blank" rel="noopener">http://humaoli.blog.163.com/blog/static/13346651820141125102125995/</a></strong></p>
+<hr>
+<h1 id="找零问题"><a href="#找零问题" class="headerlink" title="找零问题"></a>找零问题</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="comment">#values是硬币的面值values = [ 25, 21, 10, 5, 1]</span></span><br><span class="line"><span class="comment">#valuesCounts   钱币对应的种类数</span></span><br><span class="line"><span class="comment">#money  找出来的总钱数</span></span><br><span class="line"><span class="comment">#coinsUsed   对应于目前钱币总数i所使用的硬币数目</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">coinChange</span><span class="params">(values,valuesCounts,money,coinsUsed)</span>:</span></span><br><span class="line">    <span class="comment">#遍历出从1到money所有的钱数可能</span></span><br><span class="line">    <span class="keyword">for</span> cents <span class="keyword">in</span> range(<span class="number">1</span>,money+<span class="number">1</span>):</span><br><span class="line">        minCoins = cents</span><br><span class="line">        <span class="comment">#把所有的硬币面值遍历出来和钱数做对比</span></span><br><span class="line">        <span class="keyword">for</span> kind <span class="keyword">in</span> range(<span class="number">0</span>,valuesCounts):</span><br><span class="line">            <span class="keyword">if</span> (values[kind] &lt;= cents):</span><br><span class="line">                temp = coinsUsed[cents - values[kind]] +<span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> (temp &lt; minCoins):</span><br><span class="line">                    minCoins = temp</span><br><span class="line">        coinsUsed[cents] = minCoins</span><br><span class="line">        <span class="keyword">print</span> (<span class="string">'面值:&#123;0&#125;的最少硬币使用数为:&#123;1&#125;'</span>.format(cents, coinsUsed[cents]))</span><br></pre></td></tr></table></figure>
+<p>思路: <a href="http://blog.csdn.net/wdxin1322/article/details/9501163" target="_blank" rel="noopener">http://blog.csdn.net/wdxin1322/article/details/9501163</a></p>
+<p>方法: <a href="http://www.cnblogs.com/ChenxofHit/archive/2011/03/18/1988431.html" target="_blank" rel="noopener">http://www.cnblogs.com/ChenxofHit/archive/2011/03/18/1988431.html</a></p>
+<hr>
+<h1 id="二叉树节点"><a href="#二叉树节点" class="headerlink" title="二叉树节点"></a>二叉树节点</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data, left=None, right=None)</span>:</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br><span class="line"></span><br><span class="line">tree = Node(<span class="number">1</span>, Node(<span class="number">3</span>, Node(<span class="number">7</span>, Node(<span class="number">0</span>)), Node(<span class="number">6</span>)), Node(<span class="number">2</span>, Node(<span class="number">5</span>), Node(<span class="number">4</span>)))</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="层次遍历"><a href="#层次遍历" class="headerlink" title="层次遍历"></a>层次遍历</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lookup</span><span class="params">(root)</span>:</span></span><br><span class="line">    row = [root]</span><br><span class="line">    <span class="keyword">while</span> row:</span><br><span class="line">        print(row)</span><br><span class="line">        row = [kid <span class="keyword">for</span> item <span class="keyword">in</span> row <span class="keyword">for</span> kid <span class="keyword">in</span> (item.left, item.right) <span class="keyword">if</span> kid]</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="深度遍历"><a href="#深度遍历" class="headerlink" title="深度遍历"></a>深度遍历</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deep</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">print</span> root.data</span><br><span class="line">    deep(root.left)</span><br><span class="line">    deep(root.right)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    lookup(tree)</span><br><span class="line">    deep(tree)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="前中后序遍历"><a href="#前中后序遍历" class="headerlink" title="前中后序遍历"></a>前中后序遍历</h1><p><strong>深度遍历改变顺序就OK了</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="comment">#二叉树的遍历</span></span><br><span class="line"><span class="comment">#简单的二叉树节点类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,value,left,right)</span>:</span></span><br><span class="line">        self.value = value</span><br><span class="line">        self.left = left</span><br><span class="line">        self.right = right</span><br><span class="line"></span><br><span class="line"><span class="comment">#中序遍历:遍历左子树,访问当前节点,遍历右子树</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mid_travelsal</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="keyword">None</span>:</span><br><span class="line">        mid_travelsal(root.left)</span><br><span class="line">    <span class="comment">#访问当前节点</span></span><br><span class="line">    print(root.value)</span><br><span class="line">    <span class="keyword">if</span> root.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        mid_travelsal(root.right)</span><br><span class="line"></span><br><span class="line"><span class="comment">#前序遍历:访问当前节点,遍历左子树,遍历右子树</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pre_travelsal</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> (root.value)</span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        pre_travelsal(root.left)</span><br><span class="line">    <span class="keyword">if</span> root.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        pre_travelsal(root.right)</span><br><span class="line"></span><br><span class="line"><span class="comment">#后续遍历:遍历左子树,遍历右子树,访问当前节点</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">post_trvelsal</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        post_trvelsal(root.left)</span><br><span class="line">    <span class="keyword">if</span> root.right <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">        post_trvelsal(root.right)</span><br><span class="line">    <span class="keyword">print</span> (root.value)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="求最大树深"><a href="#求最大树深" class="headerlink" title="求最大树深"></a>求最大树深</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxDepth</span><span class="params">(root)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root.left), maxDepth(root.right)) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="求两棵树是否相同"><a href="#求两棵树是否相同" class="headerlink" title="求两棵树是否相同"></a>求两棵树是否相同</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isSameTree</span><span class="params">(p, q)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> p == <span class="keyword">None</span> <span class="keyword">and</span> q == <span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">elif</span> p <span class="keyword">and</span> q :</span><br><span class="line">        <span class="keyword">return</span> p.val == q.val <span class="keyword">and</span> isSameTree(p.left,q.left) <span class="keyword">and</span> isSameTree(p.right,q.right)</span><br><span class="line">    <span class="keyword">else</span> :</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="前序中序求后序"><a href="#前序中序求后序" class="headerlink" title="前序中序求后序"></a>前序中序求后序</h1><p><strong>推荐: <a href="http://blog.csdn.net/hinyunsin/article/details/6315502" target="_blank" rel="noopener">http://blog.csdn.net/hinyunsin/article/details/6315502</a></strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rebuild</span><span class="params">(pre, center)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> pre:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    cur = Node(pre[<span class="number">0</span>])</span><br><span class="line">    index = center.index(pre[<span class="number">0</span>])</span><br><span class="line">    cur.left = rebuild(pre[<span class="number">1</span>:index + <span class="number">1</span>], center[:index])</span><br><span class="line">    cur.right = rebuild(pre[index + <span class="number">1</span>:], center[index + <span class="number">1</span>:])</span><br><span class="line">    <span class="keyword">return</span> cur</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deep</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    deep(root.left)</span><br><span class="line">    deep(root.right)</span><br><span class="line">    <span class="keyword">print</span> root.data</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="单链表逆置"><a href="#单链表逆置" class="headerlink" title="单链表逆置"></a>单链表逆置</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, data=None, next=None)</span>:</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.next = next</span><br><span class="line">link = Node(<span class="number">1</span>, Node(<span class="number">2</span>, Node(<span class="number">3</span>, Node(<span class="number">4</span>, Node(<span class="number">5</span>, Node(<span class="number">6</span>, Node(<span class="number">7</span>, Node(<span class="number">8</span>, Node(<span class="number">9</span>)))))))))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rev</span><span class="params">(link)</span>:</span></span><br><span class="line">    pre = link</span><br><span class="line">    cur = link.next</span><br><span class="line">    pre.next = <span class="keyword">None</span></span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        tmp = cur.next</span><br><span class="line">        cur.next = pre</span><br><span class="line">        pre = cur</span><br><span class="line">        cur = tmp</span><br><span class="line">    <span class="keyword">return</span> pre</span><br><span class="line">root = rev(link)</span><br><span class="line"><span class="keyword">while</span> root:</span><br><span class="line">    <span class="keyword">print</span> root.data</span><br><span class="line">    root = root.next</span><br></pre></td></tr></table></figure>
+<p>思路: <a href="http://blog.csdn.net/feliciafay/article/details/6841115" target="_blank" rel="noopener">http://blog.csdn.net/feliciafay/article/details/6841115</a></p>
+<p>方法: <a href="http://www.xuebuyuan.com/2066385.html?mobile=1" target="_blank" rel="noopener">http://www.xuebuyuan.com/2066385.html?mobile=1</a></p>
+<hr>
+<h1 id="两个字符串是否是变位词"><a href="#两个字符串是否是变位词" class="headerlink" title="两个字符串是否是变位词"></a>两个字符串是否是变位词</h1><p>class Anagram:<br>​    “””<br>​    @:param s1: The first string<br>​    @:param s2: The second string<br>​    @:return true or false<br>​    “””<br>​    def Solution1(s1,s2):<br>​        alist = list(s2)<br>​        pos1 = 0<br>​        stillOK = True<br>​        while pos1 &lt; len(s1) and stillOK:<br>​            pos2 = 0<br>​            found = False<br>​            while pos2 &lt; len(alist) and not found:<br>​                if s1[pos1] == alist[pos2]:<br>​                    found = True<br>​                else:<br>​                    pos2 = pos2 + 1<br>​            if found:<br>​                alist[pos2] = None<br>​            else:<br>​                stillOK = False<br>​            pos1 = pos1 + 1<br>​        return stillOK<br>​    print(Solution1(‘abcd’,’dcba’))</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Solution2</span><span class="params">(s1,s2)</span>:</span></span><br><span class="line">    alist1 = list(s1)</span><br><span class="line">    alist2 = list(s2)</span><br><span class="line">    alist1.sort()</span><br><span class="line">    alist2.sort()</span><br><span class="line">    pos = <span class="number">0</span></span><br><span class="line">    matches = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">while</span> pos &lt; len(s1) <span class="keyword">and</span> matches:</span><br><span class="line">        <span class="keyword">if</span> alist1[pos] == alist2[pos]:</span><br><span class="line">            pos = pos + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            matches = <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> matches</span><br><span class="line">print(Solution2(<span class="string">'abcde'</span>,<span class="string">'edcbg'</span>))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Solution3</span><span class="params">(s1,s2)</span>:</span></span><br><span class="line">    c1 = [<span class="number">0</span>]*<span class="number">26</span></span><br><span class="line">    c2 = [<span class="number">0</span>]*<span class="number">26</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s1)):</span><br><span class="line">        pos = ord(s1[i])-ord(<span class="string">'a'</span>)</span><br><span class="line">        c1[pos] = c1[pos] + <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s2)):</span><br><span class="line">        pos = ord(s2[i])-ord(<span class="string">'a'</span>)</span><br><span class="line">        c2[pos] = c2[pos] + <span class="number">1</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    stillOK = <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">while</span> j&lt;<span class="number">26</span> <span class="keyword">and</span> stillOK:</span><br><span class="line">        <span class="keyword">if</span> c1[j] == c2[j]:</span><br><span class="line">            j = j + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            stillOK = <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">return</span> stillOK</span><br><span class="line">print(Solution3(<span class="string">'apple'</span>,<span class="string">'pleap'</span>))</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+     <!-- 在每篇文章末尾统一添加“本文结束”标记 -->
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+   
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/8ff924e8/" rel="next" title="Python中GIL的相关解释，多线程性能究竟如何？">
+                <i class="fa fa-chevron-left"></i> Python中GIL的相关解释，多线程性能究竟如何？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/f915806d/" rel="prev" title="PythonWeb应用性能调优">
+                PythonWeb应用性能调优 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="http://mmbiz.qpic.cn/mmbiz_jpg/ibGeqiconkZdzhBHFfR42qVycZ8A6yaxUcpc2fGXZAEsjLtHxftZIpUYSscAVH8c90GrD0iamBVbMQZibiaWeBriaxxg/0?wx_fmt=jpeg" alt="阿斯顿发光">
+          <p class="site-author-name" itemprop="name">阿斯顿发光</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://mmbiz.qpic.cn/mmbiz_jpg/ibGeqiconkZdxMaYicMmtSRyQhxDickicpp9urianPVEYKXIt7H8fvm2jsibaiaKWmPTzA9RDz7yFr7QUbn39wraA8RV3Q/0?wx_fmt=jpeg" target="_blank" title="WeiXin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WeiXin
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:astlight@outlook.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://astlight.github.io/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序"><span class="nav-number">1.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序"><span class="nav-number">2.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入排序"><span class="nav-number">3.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择排序"><span class="nav-number">4.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#希尔排序"><span class="nav-number">5.</span> <span class="nav-text">希尔排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分查找递归"><span class="nav-number">6.</span> <span class="nav-text">二分查找递归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分查找"><span class="nav-number">7.</span> <span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序"><span class="nav-number">8.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全排列"><span class="nav-number">9.</span> <span class="nav-text">全排列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#全组合"><span class="nav-number">10.</span> <span class="nav-text">全组合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变态台阶问题"><span class="nav-number">11.</span> <span class="nav-text">变态台阶问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矩形覆盖"><span class="nav-number">12.</span> <span class="nav-text">矩形覆盖</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#杨氏矩阵查找"><span class="nav-number">13.</span> <span class="nav-text">杨氏矩阵查找</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#去除列表中的重复元素"><span class="nav-number">14.</span> <span class="nav-text">去除列表中的重复元素</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建字典的方法"><span class="nav-number">15.</span> <span class="nav-text">创建字典的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接创建"><span class="nav-number">15.0.1.</span> <span class="nav-text">直接创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工厂方法"><span class="nav-number">15.0.2.</span> <span class="nav-text">工厂方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fromkeys-方法"><span class="nav-number">15.0.3.</span> <span class="nav-text">fromkeys()方法</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#合并两个有序列表"><span class="nav-number">16.</span> <span class="nav-text">合并两个有序列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#交叉链表求交点"><span class="nav-number">17.</span> <span class="nav-text">交叉链表求交点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#找零问题"><span class="nav-number">18.</span> <span class="nav-text">找零问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉树节点"><span class="nav-number">19.</span> <span class="nav-text">二叉树节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#层次遍历"><span class="nav-number">20.</span> <span class="nav-text">层次遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度遍历"><span class="nav-number">21.</span> <span class="nav-text">深度遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前中后序遍历"><span class="nav-number">22.</span> <span class="nav-text">前中后序遍历</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#求最大树深"><span class="nav-number">23.</span> <span class="nav-text">求最大树深</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#求两棵树是否相同"><span class="nav-number">24.</span> <span class="nav-text">求两棵树是否相同</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前序中序求后序"><span class="nav-number">25.</span> <span class="nav-text">前序中序求后序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单链表逆置"><span class="nav-number">26.</span> <span class="nav-text">单链表逆置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两个字符串是否是变位词"><span class="nav-number">27.</span> <span class="nav-text">两个字符串是否是变位词</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="kiss-wink-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">阿斯顿发光</span>
+</div>
+
+
+<!-- <div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+-->
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
