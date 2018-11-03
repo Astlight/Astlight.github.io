@@ -111,7 +111,7 @@
 <meta property="og:description" content="为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。 设定目标:  性能提高了，最直接的效果当然是能用更少的机器处理相同流量，目标是关闭 20% 的 sta">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/2734/17949703/8ef7d08c-6a0b-11e6-8bbd-41f82086d862.png">
-<meta property="og:updated_time" content="2018-11-03T11:18:09.134Z">
+<meta property="og:updated_time" content="2018-11-03T13:04:22.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PythonWeb应用性能调优">
 <meta name="twitter:description" content="为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。 设定目标:  性能提高了，最直接的效果当然是能用更少的机器处理相同流量，目标是关闭 20% 的 sta">
@@ -226,7 +226,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
@@ -256,7 +256,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
@@ -337,6 +337,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -494,8 +516,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/3902fcf5/" rel="prev" title="从 python2.7 迁移到 python3.6">
-                从 python2.7 迁移到 python3.6 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/7522f4fe/" rel="prev" title="从Python2.7迁移到Python3.6">
+                从Python2.7迁移到Python3.6 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -578,15 +600,24 @@
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
