@@ -102,19 +102,19 @@
 
 
 
-<meta name="description" content="为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。 设定目标:  性能提高了，最直接的效果当然是能用更少的机器处理相同流量，目标是关闭 20% 的 sta">
+<meta name="description" content="为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。 设定目标:  性能提高了，最直接的效果当然是能用更少的机器处理相同流量，目标是关闭 20% 的 st">
 <meta name="keywords" content="性能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PythonWeb应用性能调优">
 <meta property="og:url" content="http://yoursite.com/posts/f915806d/index.html">
 <meta property="og:site_name" content="AstlightBlog">
-<meta property="og:description" content="为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。 设定目标:  性能提高了，最直接的效果当然是能用更少的机器处理相同流量，目标是关闭 20% 的 sta">
+<meta property="og:description" content="为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。 设定目标:  性能提高了，最直接的效果当然是能用更少的机器处理相同流量，目标是关闭 20% 的 st">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://cloud.githubusercontent.com/assets/2734/17949703/8ef7d08c-6a0b-11e6-8bbd-41f82086d862.png">
 <meta property="og:updated_time" content="2018-11-03T13:04:22.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PythonWeb应用性能调优">
-<meta name="twitter:description" content="为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。 设定目标:  性能提高了，最直接的效果当然是能用更少的机器处理相同流量，目标是关闭 20% 的 sta">
+<meta name="twitter:description" content="为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。 设定目标:  性能提高了，最直接的效果当然是能用更少的机器处理相同流量，目标是关闭 20% 的 st">
 <meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/2734/17949703/8ef7d08c-6a0b-11e6-8bbd-41f82086d862.png">
 
 
@@ -266,7 +266,10 @@
       
 
       
+
     </ul>
+
+
   
 
   
@@ -419,7 +422,7 @@
       
 
       
-        <p>为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>为了快速上线，早期很多代码基本是怎么方便怎么来，这样就留下了很多隐患，性能也不是很理想，python 因为 GIL 的原因，在性能上有天然劣势，即使用了 gevent/eventlet 这种协程方案，也很容易因为耗时的 CPU 操作阻塞住整个进程。前阵子对基础代码做了些重构，效果显著，记录一些。</p>
 <p>设定目标:</p>
 <ul>
 <li>性能提高了，最直接的效果当然是能用更少的机器处理相同流量，目标是关闭 20% 的 stateless webserver.</li>
@@ -709,12 +712,13 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2018✔</span>
   <span class="with-love">
     <i class="kiss-wink-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">阿斯顿发光</span>
+  <span class="author" itemprop="copyrightHolder">🛠阿斯顿发光🛠</span>
 </div>
+
 
 
 <!-- <div class="powered-by">

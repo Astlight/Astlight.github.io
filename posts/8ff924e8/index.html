@@ -102,13 +102,13 @@
 
 
 
-<meta name="description" content="GIL是什么首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的JP">
+<meta name="description" content="GIL是什么首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的J">
 <meta name="keywords" content="历史">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python中GIL的相关解释，多线程性能究竟如何？">
 <meta property="og:url" content="http://yoursite.com/posts/8ff924e8/index.html">
 <meta property="og:site_name" content="AstlightBlog">
-<meta property="og:description" content="GIL是什么首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的JP">
+<meta property="og:description" content="GIL是什么首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的J">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ww1.sinaimg.cn/mw690/aa213e02jw1eujep41uokj22yh1617wh.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/mw690/aa213e02jw1eujep4hiebj20mx02gdg0.jpg">
@@ -116,7 +116,7 @@
 <meta property="og:updated_time" content="2018-11-03T13:04:22.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python中GIL的相关解释，多线程性能究竟如何？">
-<meta name="twitter:description" content="GIL是什么首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的JP">
+<meta name="twitter:description" content="GIL是什么首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的J">
 <meta name="twitter:image" content="http://ww1.sinaimg.cn/mw690/aa213e02jw1eujep41uokj22yh1617wh.jpg">
 
 
@@ -268,7 +268,10 @@
       
 
       
+
     </ul>
+
+
   
 
   
@@ -421,7 +424,7 @@
       
 
       
-        <h3 id="GIL是什么"><a href="#GIL是什么" class="headerlink" title="GIL是什么"></a><strong>GIL是什么</strong></h3><p>首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的JPython就没有GIL。然而因为CPython是大部分环境下默认的Python执行环境。所以在很多人的概念里CPython就是Python，也就想当然的把GIL归结为Python语言的缺陷。所以这里要先明确一点：GIL并不是Python的特性，Python完全可以不依赖于GIL。</p>
+        <script src="/assets/js/APlayer.min.js"> </script><h3 id="GIL是什么"><a href="#GIL是什么" class="headerlink" title="GIL是什么"></a><strong>GIL是什么</strong></h3><p>首先需要明确的一点是GIL并不是Python的特性，它是在实现Python解析器(CPython)时所引入的一个概念。就好比C++是一套语言（语法）标准，但是可以用不同的编译器来编译成可执行代码。有名的编译器例如GCC，INTEL C++，Visual C++等。Python也一样，同样一段代码可以通过CPython，PyPy，Psyco等不同的Python执行环境来执行。像其中的JPython就没有GIL。然而因为CPython是大部分环境下默认的Python执行环境。所以在很多人的概念里CPython就是Python，也就想当然的把GIL归结为Python语言的缺陷。所以这里要先明确一点：GIL并不是Python的特性，Python完全可以不依赖于GIL。</p>
 <p>那么CPython实现中的GIL又是什么呢？GIL全称Global Interpreter Lock为了避免误导，我们还是来看一下官方给出的解释：</p>
 <blockquote>
 <p>In CPython, the global interpreter lock, or GIL, is a mutex that prevents multiple native threads from executing Python bytecodes at once. This lock is necessary mainly because CPython’s memory management is not thread-safe. (However, since the GIL exists, other features have grown to depend on the guarantees that it enforces.)</p>
@@ -711,12 +714,13 @@
         <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2018✔</span>
   <span class="with-love">
     <i class="kiss-wink-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">阿斯顿发光</span>
+  <span class="author" itemprop="copyrightHolder">🛠阿斯顿发光🛠</span>
 </div>
+
 
 
 <!-- <div class="powered-by">
