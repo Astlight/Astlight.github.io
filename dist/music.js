@@ -4,6 +4,7 @@ const ap = new APlayer({
     autoplay: true,
     loop: 'all',
     preload: 'auto',
+    volume: 0.2
 
     audio: [
       {
