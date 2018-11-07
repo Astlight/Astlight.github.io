@@ -122,7 +122,7 @@
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a3AicAFva6IBqcEy9tNQffmzcW0H4eZ5QAZEnAl08rib4KBNHJCIPmJgJA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a31ypNaFzSwJZ0HfrQ3sJaLkRjAFnx6ZB3iaKliax2VVYSY1jtMFoEBsZg/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a323nhhickBkxfklZP1R4eFPfOYrI3iaFUibEkAMUWJLYLEJ2YlpcySQJKA/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
-<meta property="og:updated_time" content="2018-11-07T03:14:17.485Z">
+<meta property="og:updated_time" content="2018-11-07T03:19:03.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="史上更全的MySQL高性能优化实战总结！">
 <meta name="twitter:description" content="前言MySQL对于很多Linux从业者而言，是一个非常棘手的问题，多数情况都是因为对数据库出现问题的情况和处理思路不清晰。在进行MySQL的优化之前必须要了解的就是MySQL的查询过程，很多的查询优化工作实际上就是遵循一些原则让MySQL的优化器能够按照预想的合理方式运行而已。 今天给大家体验MySQL的优化实战。   优化的哲学注意：优化有风险，涉足需谨慎！ 优化可能带来的问题 优化不总是对一">
@@ -434,33 +434,33 @@
 
       
         <hr>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h3><p>MySQL对于很多Linux从业者而言，是一个非常棘手的问题，多数情况都是因为对数据库出现问题的情况和处理思路不清晰。在进行MySQL的优化之前必须要了解的就是MySQL的查询过程，很多的查询优化工作实际上就是遵循一些原则让MySQL的优化器能够按照预想的合理方式运行而已。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>MySQL对于很多Linux从业者而言，是一个非常棘手的问题，多数情况都是因为对数据库出现问题的情况和处理思路不清晰。在进行MySQL的优化之前必须要了解的就是MySQL的查询过程，很多的查询优化工作实际上就是遵循一些原则让MySQL的优化器能够按照预想的合理方式运行而已。</p>
 <p>今天给大家体验MySQL的优化实战。</p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a3TBdpJ75T5aUIjZVUyV1WTSJKBBaibVMicVKkjBOX0uLuqXgYTTkYZVicw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <hr>
-<h3 id="优化的哲学"><a href="#优化的哲学" class="headerlink" title="优化的哲学"></a><strong>优化的哲学</strong></h3><p>注意：优化有风险，涉足需谨慎！</p>
-<h4 id="优化可能带来的问题"><a href="#优化可能带来的问题" class="headerlink" title="优化可能带来的问题"></a><strong>优化可能带来的问题</strong></h4><ul>
+<h2 id="优化的哲学"><a href="#优化的哲学" class="headerlink" title="优化的哲学"></a><strong>优化的哲学</strong></h2><p>注意：优化有风险，涉足需谨慎！</p>
+<h3 id="优化可能带来的问题"><a href="#优化可能带来的问题" class="headerlink" title="优化可能带来的问题"></a><strong>优化可能带来的问题</strong></h3><ul>
 <li>优化不总是对一个单纯的环境进行，还很可能是一个复杂的已投产的系统。</li>
 <li>优化手段本来就有很大的风险，只不过你没能力意识到和预见到！</li>
 <li>任何的技术可以解决一个问题，但必然存在带来一个问题的风险！</li>
 <li>对于优化来说解决问题而带来的问题,控制在可接受的范围内才是有成果。</li>
 <li>保持现状或出现更差的情况都是失败！</li>
 </ul>
-<h4 id="优化的需求"><a href="#优化的需求" class="headerlink" title="优化的需求"></a><strong>优化的需求</strong></h4><ul>
+<h3 id="优化的需求"><a href="#优化的需求" class="headerlink" title="优化的需求"></a><strong>优化的需求</strong></h3><ul>
 <li>稳定性和业务可持续性,通常比性能更重要！</li>
 <li>优化不可避免涉及到变更，变更就有风险！</li>
 <li>优化使性能变好，维持和变差是等概率事件！</li>
 <li>切记优化,应该是各部门协同，共同参与的工作，任何单一部门都不能对数据库进行优化！</li>
 <li>所以优化工作,是由业务需要驱使的！！！</li>
 </ul>
-<h4 id="优化由谁参与"><a href="#优化由谁参与" class="headerlink" title="优化由谁参与"></a><strong>优化由谁参与</strong></h4><p>在进行数据库优化时，应由数据库管理员、业务部门代表、应用程序架构师、应用程序设计人员、应用程序开发人员、硬件及系统管理员、存储管理员等，业务相关人员共同参与。</p>
+<h3 id="优化由谁参与"><a href="#优化由谁参与" class="headerlink" title="优化由谁参与"></a><strong>优化由谁参与</strong></h3><p>在进行数据库优化时，应由数据库管理员、业务部门代表、应用程序架构师、应用程序设计人员、应用程序开发人员、硬件及系统管理员、存储管理员等，业务相关人员共同参与。</p>
 <hr>
-<h3 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a><strong>优化思路</strong></h3><h4 id="优化什么"><a href="#优化什么" class="headerlink" title="优化什么"></a><strong>优化什么</strong></h4><p>在数据库优化上有两个主要方面：即安全与性能。</p>
+<h2 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a><strong>优化思路</strong></h2><h3 id="优化什么"><a href="#优化什么" class="headerlink" title="优化什么"></a><strong>优化什么</strong></h3><p>在数据库优化上有两个主要方面：即安全与性能。</p>
 <ul>
 <li>安全 —&gt; 数据可持续性</li>
 <li>性能 —&gt; 数据的高性能访问</li>
 </ul>
-<h4 id="优化的范围有哪些"><a href="#优化的范围有哪些" class="headerlink" title="优化的范围有哪些"></a><strong>优化的范围有哪些</strong></h4><p><strong>存储、主机和操作系统方面：</strong></p>
+<h3 id="优化的范围有哪些"><a href="#优化的范围有哪些" class="headerlink" title="优化的范围有哪些"></a><strong>优化的范围有哪些</strong></h3><p><strong>存储、主机和操作系统方面：</strong></p>
 <ul>
 <li>主机架构稳定性</li>
 <li>I/O规划及配置</li>
@@ -482,7 +482,7 @@
 <li>实例配置</li>
 </ul>
 <p>说明：不管是在，设计系统，定位问题还是优化，都可以按照这个顺序执行。</p>
-<h4 id="优化维度"><a href="#优化维度" class="headerlink" title="优化维度"></a><strong>优化维度</strong></h4><p>数据库优化维度有四个：</p>
+<h3 id="优化维度"><a href="#优化维度" class="headerlink" title="优化维度"></a><strong>优化维度</strong></h3><p>数据库优化维度有四个：</p>
 <p><strong>硬件、系统配置、数据库表结构、SQL及索引。</strong></p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a3icknu17R9iaJmNHunkOEOfvUSnicL9icmcUk8UT7dSM0rftRESxLVOEgyQ/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <h6 id=""><a href="#" class="headerlink" title=" "></a> </h6><p><strong>优化选择：</strong></p>
@@ -491,11 +491,11 @@
 <li>优化效果：硬件&lt;系统配置&lt;数据库表结构&lt;SQL及索引</li>
 </ul>
 <hr>
-<h3 id="优化工具有啥？"><a href="#优化工具有啥？" class="headerlink" title="优化工具有啥？"></a><strong>优化工具有啥？</strong></h3><h4 id="数据库层面"><a href="#数据库层面" class="headerlink" title="数据库层面"></a><strong>数据库层面</strong></h4><p><strong>检查问题常用工具：</strong></p>
+<h2 id="优化工具有啥？"><a href="#优化工具有啥？" class="headerlink" title="优化工具有啥？"></a><strong>优化工具有啥？</strong></h2><h3 id="数据库层面"><a href="#数据库层面" class="headerlink" title="数据库层面"></a><strong>数据库层面</strong></h3><p><strong>检查问题常用工具：</strong></p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a36XAG0ibVWcWoLgLK24LAfYzUpNpiaRrBZ60lTiblsnt8c9B2qjfL6ZkoQ/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <p><strong>不常用但好用的工具：</strong></p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a3gF55nOwicFVpIv44LUtKUkYObM5h3gwK60VfETNEHrtW3zhibr1v50iaw/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
-<h4 id="数据库层面问题解决思路"><a href="#数据库层面问题解决思路" class="headerlink" title="数据库层面问题解决思路"></a><strong>数据库层面问题解决思路</strong></h4><p><strong>一般应急调优的思路：</strong></p>
+<h3 id="数据库层面问题解决思路"><a href="#数据库层面问题解决思路" class="headerlink" title="数据库层面问题解决思路"></a><strong>数据库层面问题解决思路</strong></h3><p><strong>一般应急调优的思路：</strong></p>
 <p>针对突然的业务办理卡顿，无法进行正常的业务处理！需要立马解决的场景！</p>
 <ul>
 <li>1、show processlist</li>
@@ -511,7 +511,7 @@
 <li>3、分析top sql，进行explain调试，查看语句执行时间。</li>
 <li>4、调整索引或语句本身。</li>
 </ul>
-<h4 id="系统层面"><a href="#系统层面" class="headerlink" title="系统层面"></a><strong>系统层面</strong></h4><p><strong>cpu方面：</strong>vmstat、sar top、htop、nmon、mpstat</p>
+<h3 id="系统层面"><a href="#系统层面" class="headerlink" title="系统层面"></a><strong>系统层面</strong></h3><p><strong>cpu方面：</strong>vmstat、sar top、htop、nmon、mpstat</p>
 <p><strong>内存：</strong>free 、ps -aux </p>
 <p><strong>IO设备（磁盘、网络）**</strong>：**iostat 、 ss 、 netstat 、 iptraf、iftop、lsof</p>
 <p><strong>vmstat 命令说明：</strong></p>
@@ -534,7 +534,7 @@
 <li>kB_read：读取的总数据量。</li>
 <li>kB_wrtn：写入的总数量数据量；这些单位都为Kilobytes。</li>
 </ul>
-<h4 id="系统层面问题解决办法"><a href="#系统层面问题解决办法" class="headerlink" title="系统层面问题解决办法"></a><strong>系统层面问题解决办法</strong></h4><p>你认为到底负载高好，还是低好呢？</p>
+<h3 id="系统层面问题解决办法"><a href="#系统层面问题解决办法" class="headerlink" title="系统层面问题解决办法"></a><strong>系统层面问题解决办法</strong></h3><p>你认为到底负载高好，还是低好呢？</p>
 <p>在实际的生产中，一般认为 cpu只要不超过90%都没什么问题 。</p>
 <p>当然不排除下面这些特殊情况：</p>
 <p><strong>问题一：cpu负载高，IO负载低</strong></p>
@@ -556,11 +556,11 @@
 <p><strong>问题三：IO和cpu负载都很高</strong></p>
 <p>硬件不够了或sql存在问题</p>
 <hr>
-<h3 id="基础优化"><a href="#基础优化" class="headerlink" title="基础优化"></a><strong>基础优化</strong></h3><h4 id="优化思路-1"><a href="#优化思路-1" class="headerlink" title="优化思路"></a><strong>优化思路</strong></h4><p>定位问题点：</p>
+<h2 id="基础优化"><a href="#基础优化" class="headerlink" title="基础优化"></a><strong>基础优化</strong></h2><h3 id="优化思路-1"><a href="#优化思路-1" class="headerlink" title="优化思路"></a><strong>优化思路</strong></h3><p>定位问题点：</p>
 <p>硬件 –&gt; 系统 –&gt; 应用 –&gt; 数据库 –&gt; 架构（高可用、读写分离、分库分表）</p>
 <p>处理方向：</p>
 <p>明确优化目标、性能和安全的折中、防患未然</p>
-<h4 id="硬件优化"><a href="#硬件优化" class="headerlink" title="硬件优化"></a><strong>硬件优化</strong></h4><p><strong>主机方面：</strong></p>
+<h3 id="硬件优化"><a href="#硬件优化" class="headerlink" title="硬件优化"></a><strong>硬件优化</strong></h3><p><strong>主机方面：</strong></p>
 <ul>
 <li>根据数据库类型，主机CPU选择、内存容量选择、磁盘选择</li>
 <li>平衡内存和磁盘资源</li>
@@ -595,13 +595,13 @@
 <p><strong>网络设备方面：</strong></p>
 <p>使用流量支持更高的网络设备（交换机、路由器、网线、网卡、HBA卡）</p>
 <p>注意：以上这些规划应该在初始设计系统时就应该考虑好。</p>
-<h4 id="服务器硬件优化"><a href="#服务器硬件优化" class="headerlink" title="服务器硬件优化"></a><strong>服务器硬件优化</strong></h4><ul>
+<h3 id="服务器硬件优化"><a href="#服务器硬件优化" class="headerlink" title="服务器硬件优化"></a><strong>服务器硬件优化</strong></h3><ul>
 <li>1、物理状态灯：</li>
 <li>2、自带管理设备：远程控制卡（FENCE设备：ipmi ilo idarc），开关机、硬件监控。</li>
 <li>3、第三方的监控软件、设备（snmp、agent）对物理设施进行监控</li>
 <li>4、存储设备：自带的监控平台。EMC2（hp收购了）， 日立（hds），IBM低端OEM hds，高端存储是自己技术，华为存储</li>
 </ul>
-<h4 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a><strong>系统优化</strong></h4><p><strong>Cpu：</strong></p>
+<h3 id="系统优化"><a href="#系统优化" class="headerlink" title="系统优化"></a><strong>系统优化</strong></h3><p><strong>Cpu：</strong></p>
 <p>基本不需要调整，在硬件选择方面下功夫即可。</p>
 <p><strong>内存：</strong></p>
 <p>基本不需要调整，在硬件选择方面下功夫即可。</p>
@@ -622,15 +622,15 @@
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a3uoOI4IYum6AuonHAWdhvy33tsEuHLBJvic7JTMIyqibu27DPNb0dNlAg/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <p>用户限制参数（mysql可以不设置以下配置）：</p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a3gvkA5ByVHQReNKLDbDuZKWRNia8lkM00L7a62nOS2ppg3yCHibWMnRqQ/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
-<h4 id="应用优化"><a href="#应用优化" class="headerlink" title="应用优化"></a><strong>应用优化</strong></h4><p>业务应用和数据库应用独立，防火墙：iptables、selinux等其他无用服务(关闭)：</p>
+<h3 id="应用优化"><a href="#应用优化" class="headerlink" title="应用优化"></a><strong>应用优化</strong></h3><p>业务应用和数据库应用独立，防火墙：iptables、selinux等其他无用服务(关闭)：</p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a3ThHfTibFz49Yy5EGbFyAuwtGMsztG0yaTRIsbZ58pZSXsVkgzyw0ib1Q/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <p>安装图形界面的服务器不要启动图形界面 runlevel 3,另外，思考将来我们的业务是否真的需要MySQL，还是使用其他种类的数据库。用数据库的最高境界就是不用数据库。</p>
 <hr>
-<h3 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a><strong>数据库优化</strong></h3><p><strong>SQL优化方向：</strong> </p>
+<h2 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a><strong>数据库优化</strong></h2><p><strong>SQL优化方向：</strong> </p>
 <p>执行计划、索引、SQL改写</p>
 <p><strong>架构优化方向：</strong></p>
 <p>高可用架构、高性能架构、分库分表</p>
-<h4 id="数据库参数优化"><a href="#数据库参数优化" class="headerlink" title="数据库参数优化"></a><strong>数据库参数优化</strong></h4><p>调整：实例整体（高级优化，扩展）</p>
+<h3 id="数据库参数优化"><a href="#数据库参数优化" class="headerlink" title="数据库参数优化"></a><strong>数据库参数优化</strong></h3><p>调整：实例整体（高级优化，扩展）</p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a3AicAFva6IBqcEy9tNQffmzcW0H4eZ5QAZEnAl08rib4KBNHJCIPmJgJA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 <p>连接层（基础优化）</p>
 <p>设置合理的连接客户和连接方式</p>
@@ -643,7 +643,7 @@
 <li>对于经常被修改的数据，缓存会立马失效。</li>
 <li>我们可以实用内存数据库（redis、memecache），替代他的功能。</li>
 </ul>
-<h4 id="存储引擎层（innodb基础优化参数）"><a href="#存储引擎层（innodb基础优化参数）" class="headerlink" title="存储引擎层（innodb基础优化参数）"></a><strong>存储引擎层（innodb基础优化参数）</strong></h4><p><img src="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a323nhhickBkxfklZP1R4eFPfOYrI3iaFUibEkAMUWJLYLEJ2YlpcySQJKA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
+<h3 id="存储引擎层（innodb基础优化参数）"><a href="#存储引擎层（innodb基础优化参数）" class="headerlink" title="存储引擎层（innodb基础优化参数）"></a><strong>存储引擎层（innodb基础优化参数）</strong></h3><p><img src="https://mmbiz.qpic.cn/mmbiz_png/UtWdDgynLdbAUKxPhOt5w3a5p8wcZ9a323nhhickBkxfklZP1R4eFPfOYrI3iaFUibEkAMUWJLYLEJ2YlpcySQJKA/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></p>
 
       
     </div>
@@ -862,7 +862,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化的哲学"><span class="nav-number">2.</span> <span class="nav-text">优化的哲学</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优化可能带来的问题"><span class="nav-number">2.1.</span> <span class="nav-text">优化可能带来的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化的需求"><span class="nav-number">2.2.</span> <span class="nav-text">优化的需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化由谁参与"><span class="nav-number">2.3.</span> <span class="nav-text">优化由谁参与</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化思路"><span class="nav-number">3.</span> <span class="nav-text">优化思路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优化什么"><span class="nav-number">3.1.</span> <span class="nav-text">优化什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化的范围有哪些"><span class="nav-number">3.2.</span> <span class="nav-text">优化的范围有哪些</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优化维度"><span class="nav-number">3.3.</span> <span class="nav-text">优化维度</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#"><span class="nav-number">3.3.0.1.</span> <span class="nav-text"> </span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#优化工具有啥？"><span class="nav-number">4.</span> <span class="nav-text">优化工具有啥？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库层面"><span class="nav-number">4.1.</span> <span class="nav-text">数据库层面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库层面问题解决思路"><span class="nav-number">4.2.</span> <span class="nav-text">数据库层面问题解决思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统层面"><span class="nav-number">4.3.</span> <span class="nav-text">系统层面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统层面问题解决办法"><span class="nav-number">4.4.</span> <span class="nav-text">系统层面问题解决办法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础优化"><span class="nav-number">5.</span> <span class="nav-text">基础优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优化思路-1"><span class="nav-number">5.1.</span> <span class="nav-text">优化思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#硬件优化"><span class="nav-number">5.2.</span> <span class="nav-text">硬件优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#服务器硬件优化"><span class="nav-number">5.3.</span> <span class="nav-text">服务器硬件优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统优化"><span class="nav-number">5.4.</span> <span class="nav-text">系统优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用优化"><span class="nav-number">5.5.</span> <span class="nav-text">应用优化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库优化"><span class="nav-number">6.</span> <span class="nav-text">数据库优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库参数优化"><span class="nav-number">6.1.</span> <span class="nav-text">数据库参数优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储引擎层（innodb基础优化参数）"><span class="nav-number">6.2.</span> <span class="nav-text">存储引擎层（innodb基础优化参数）</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化的哲学"><span class="nav-number">2.</span> <span class="nav-text">优化的哲学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化可能带来的问题"><span class="nav-number">2.1.</span> <span class="nav-text">优化可能带来的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化的需求"><span class="nav-number">2.2.</span> <span class="nav-text">优化的需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化由谁参与"><span class="nav-number">2.3.</span> <span class="nav-text">优化由谁参与</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化思路"><span class="nav-number">3.</span> <span class="nav-text">优化思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化什么"><span class="nav-number">3.1.</span> <span class="nav-text">优化什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化的范围有哪些"><span class="nav-number">3.2.</span> <span class="nav-text">优化的范围有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化维度"><span class="nav-number">3.3.</span> <span class="nav-text">优化维度</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#"><span class="nav-number">3.3.0.0.1.</span> <span class="nav-text"> </span></a></li></ol></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#优化工具有啥？"><span class="nav-number">4.</span> <span class="nav-text">优化工具有啥？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库层面"><span class="nav-number">4.1.</span> <span class="nav-text">数据库层面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库层面问题解决思路"><span class="nav-number">4.2.</span> <span class="nav-text">数据库层面问题解决思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统层面"><span class="nav-number">4.3.</span> <span class="nav-text">系统层面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统层面问题解决办法"><span class="nav-number">4.4.</span> <span class="nav-text">系统层面问题解决办法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础优化"><span class="nav-number">5.</span> <span class="nav-text">基础优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化思路-1"><span class="nav-number">5.1.</span> <span class="nav-text">优化思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件优化"><span class="nav-number">5.2.</span> <span class="nav-text">硬件优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器硬件优化"><span class="nav-number">5.3.</span> <span class="nav-text">服务器硬件优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统优化"><span class="nav-number">5.4.</span> <span class="nav-text">系统优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用优化"><span class="nav-number">5.5.</span> <span class="nav-text">应用优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库优化"><span class="nav-number">6.</span> <span class="nav-text">数据库优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库参数优化"><span class="nav-number">6.1.</span> <span class="nav-text">数据库参数优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储引擎层（innodb基础优化参数）"><span class="nav-number">6.2.</span> <span class="nav-text">存储引擎层（innodb基础优化参数）</span></a></li></ol></li></div>
             
 
           </div>
