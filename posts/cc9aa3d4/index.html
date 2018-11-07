@@ -110,23 +110,23 @@
 <meta property="og:site_name" content="AstlightBlog">
 <meta property="og:description" content="前言MySQL对于很多Linux从业者而言，是一个非常棘手的问题，多数情况都是因为对数据库出现问题的情况和处理思路不清晰。在进行MySQL的优化之前必须要了解的就是MySQL的查询过程，很多的查询优化工作实际上就是遵循一些原则让MySQL的优化器能够按照预想的合理方式运行而已。 今天给大家体验MySQL的优化实战。   优化的哲学注意：优化有风险，涉足需谨慎！ 优化可能带来的问题 优化不总是对一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql1.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql2.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql3.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql4.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql5.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql6.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql7.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql8.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql9.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql10.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql11.png">
-<meta property="og:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql12.png">
-<meta property="og:updated_time" content="2018-11-07T03:40:16.072Z">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql1.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql2.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql3.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql4.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql5.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql6.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql7.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql8.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql9.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql10.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql11.png">
+<meta property="og:image" content="http://pht1wbp11.bkt.clouddn.com/mysql12.png">
+<meta property="og:updated_time" content="2018-11-07T03:48:04.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="史上更全的MySQL高性能优化实战总结！">
 <meta name="twitter:description" content="前言MySQL对于很多Linux从业者而言，是一个非常棘手的问题，多数情况都是因为对数据库出现问题的情况和处理思路不清晰。在进行MySQL的优化之前必须要了解的就是MySQL的查询过程，很多的查询优化工作实际上就是遵循一些原则让MySQL的优化器能够按照预想的合理方式运行而已。 今天给大家体验MySQL的优化实战。   优化的哲学注意：优化有风险，涉足需谨慎！ 优化可能带来的问题 优化不总是对一">
-<meta name="twitter:image" content="http://yoursite.com/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql1.png">
+<meta name="twitter:image" content="http://pht1wbp11.bkt.clouddn.com/mysql1.png">
 
 
 
@@ -436,7 +436,7 @@
         <hr>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><p>MySQL对于很多Linux从业者而言，是一个非常棘手的问题，多数情况都是因为对数据库出现问题的情况和处理思路不清晰。在进行MySQL的优化之前必须要了解的就是MySQL的查询过程，很多的查询优化工作实际上就是遵循一些原则让MySQL的优化器能够按照预想的合理方式运行而已。</p>
 <p>今天给大家体验MySQL的优化实战。</p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql1.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql1.png" alt="img"></p>
 <hr>
 <h2 id="优化的哲学"><a href="#优化的哲学" class="headerlink" title="优化的哲学"></a><strong>优化的哲学</strong></h2><p>注意：优化有风险，涉足需谨慎！</p>
 <h3 id="优化可能带来的问题"><a href="#优化可能带来的问题" class="headerlink" title="优化可能带来的问题"></a><strong>优化可能带来的问题</strong></h3><ul>
@@ -484,7 +484,7 @@
 <p>说明：不管是在，设计系统，定位问题还是优化，都可以按照这个顺序执行。</p>
 <h3 id="优化维度"><a href="#优化维度" class="headerlink" title="优化维度"></a><strong>优化维度</strong></h3><p>数据库优化维度有四个：</p>
 <p><strong>硬件、系统配置、数据库表结构、SQL及索引。</strong></p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql2.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql2.png" alt="img"></p>
 <p><strong>优化选择：</strong></p>
 <ul>
 <li>优化成本：硬件&gt;系统配置&gt;数据库表结构&gt;SQL及索引</li>
@@ -492,9 +492,9 @@
 </ul>
 <hr>
 <h2 id="优化工具有啥？"><a href="#优化工具有啥？" class="headerlink" title="优化工具有啥？"></a><strong>优化工具有啥？</strong></h2><h3 id="数据库层面"><a href="#数据库层面" class="headerlink" title="数据库层面"></a><strong>数据库层面</strong></h3><p><strong>检查问题常用工具：</strong></p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql3.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql3.png" alt="img"></p>
 <p><strong>不常用但好用的工具：</strong></p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql4.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql4.png" alt="img"></p>
 <h3 id="数据库层面问题解决思路"><a href="#数据库层面问题解决思路" class="headerlink" title="数据库层面问题解决思路"></a><strong>数据库层面问题解决思路</strong></h3><p><strong>一般应急调优的思路：</strong></p>
 <p>针对突然的业务办理卡顿，无法进行正常的业务处理！需要立马解决的场景！</p>
 <ul>
@@ -612,18 +612,18 @@
 <li>raid、no lvm、 ext4或xfs、ssd、IO调度策略</li>
 <li>Swap调整(不使用swap分区)</li>
 </ul>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql5.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql5.png" alt="img"></p>
 <p>这个参数决定了Linux是倾向于使用swap，还是倾向于释放文件系统cache。在内存紧张的情况下，数值越低越倾向于释放文件系统cache。当然，这个参数只能减少使用swap的概率，并不能避免Linux使用swap。</p>
 <p>修改MySQL的配置参数innodb_flush_method，开启O_DIRECT模式。这种情况下，InnoDB的buffer pool会直接绕过文件系统cache来访问磁盘，但是redo log依旧会使用文件系统cache。值得注意的是，Redo log是覆写模式的，即使使用了文件系统的cache，也不会占用太多。</p>
 <p>IO调度策略：</p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql6.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql6.png" alt="img"></p>
 <p><strong>5.5、系统参数调整</strong></p>
 <p><strong>Linux系统内核参数优化：</strong></p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql7.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql7.png" alt="img"></p>
 <p>用户限制参数（mysql可以不设置以下配置）：</p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql8.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql8.png" alt="img"></p>
 <h3 id="应用优化"><a href="#应用优化" class="headerlink" title="应用优化"></a><strong>应用优化</strong></h3><p>业务应用和数据库应用独立，防火墙：iptables、selinux等其他无用服务(关闭)：</p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql9.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql9.png" alt="img"></p>
 <p>安装图形界面的服务器不要启动图形界面 runlevel 3,另外，思考将来我们的业务是否真的需要MySQL，还是使用其他种类的数据库。用数据库的最高境界就是不用数据库。</p>
 <hr>
 <h2 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a><strong>数据库优化</strong></h2><p><strong>SQL优化方向：</strong> </p>
@@ -631,10 +631,10 @@
 <p><strong>架构优化方向：</strong></p>
 <p>高可用架构、高性能架构、分库分表</p>
 <h3 id="数据库参数优化"><a href="#数据库参数优化" class="headerlink" title="数据库参数优化"></a><strong>数据库参数优化</strong></h3><p>调整：实例整体（高级优化，扩展）</p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql10.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql10.png" alt="img"></p>
 <p>连接层（基础优化）</p>
 <p>设置合理的连接客户和连接方式</p>
-<p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql11.png" alt="img"></p>
+<p><img src="http://pht1wbp11.bkt.clouddn.com/mysql11.png" alt="img"></p>
 <p>SQL层（基础优化）</p>
 <ul>
 <li>query_cache_size： 查询缓存</li>
@@ -643,7 +643,7 @@
 <li>对于经常被修改的数据，缓存会立马失效。</li>
 <li>我们可以实用内存数据库（redis、memecache），替代他的功能。</li>
 </ul>
-<h3 id="存储引擎层（innodb基础优化参数）"><a href="#存储引擎层（innodb基础优化参数）" class="headerlink" title="存储引擎层（innodb基础优化参数）"></a><strong>存储引擎层（innodb基础优化参数）</strong></h3><p><img src="/posts/cc9aa3d4/史上更全的MySQL高性能优化实战总结！/mysql12.png" alt="img"></p>
+<h3 id="存储引擎层（innodb基础优化参数）"><a href="#存储引擎层（innodb基础优化参数）" class="headerlink" title="存储引擎层（innodb基础优化参数）"></a><strong>存储引擎层（innodb基础优化参数）</strong></h3><p><img src="http://pht1wbp11.bkt.clouddn.com/mysql12.png" alt="img"></p>
 
       
     </div>
