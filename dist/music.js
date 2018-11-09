@@ -4,8 +4,7 @@ const ap = new APlayer({
     autoplay: true,
     loop: 'all',
     preload: 'auto',
-    volume: 0.2
-
+    volume: 0.2,
     audio: [
       {
         name: "Best of 2012",
