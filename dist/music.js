@@ -11,7 +11,7 @@ const ap = new APlayer({
         artist: '阿斯顿发光',
         url: 'http://pht1wbp11.bkt.clouddn.com/blogmusic.mp3',
         // url: 'http://astlight.top/Astlight/blog/blogmusic.mp3',
-        cover: 'http://astlight.top/Astlight/blog/avatar.jpg',
+        cover: 'http://pht1wbp11.bkt.clouddn.com/avatar.jpg',
       }
     ]
 });
