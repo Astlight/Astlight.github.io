@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="矩阵运算,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://pht1wbp11.bkt.clouddn.com/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="numpy 基本属性123456789101112131415import numpy as nparr = np.array([[1, 2, 3],                [2, 3, 4]],               dtype=np.int)  # 默认int64print(arr)  # 输出矩阵格式&apos;&apos;&apos;[[1 2 3][2 3 4]]&apos;&apos;&apos;print(&apos;number of">
+<meta name="keywords" content="矩阵运算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Numpy基础操作">
+<meta property="og:url" content="http://yoursite.com/posts/e596c711/index.html">
+<meta property="og:site_name" content="AstlightBlog">
+<meta property="og:description" content="numpy 基本属性123456789101112131415import numpy as nparr = np.array([[1, 2, 3],                [2, 3, 4]],               dtype=np.int)  # 默认int64print(arr)  # 输出矩阵格式&apos;&apos;&apos;[[1 2 3][2 3 4]]&apos;&apos;&apos;print(&apos;number of">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-15T08:17:01.426Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Numpy基础操作">
+<meta name="twitter:description" content="numpy 基本属性123456789101112131415import numpy as nparr = np.array([[1, 2, 3],                [2, 3, 4]],               dtype=np.int)  # 默认int64print(arr)  # 输出矩阵格式&apos;&apos;&apos;[[1 2 3][2 3 4]]&apos;&apos;&apos;print(&apos;number of">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/posts/e596c711/">
+
+
+
+
+
+  <title>Numpy基础操作 | AstlightBlog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- undefined -->
+<!--   
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+ -->
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AstlightBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+
+    </ul>
+
+
+  
+
+  
+</nav>
+
+
+
+ </div>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/e596c711/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="阿斯顿发光">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://pht1wbp11.bkt.clouddn.com/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AstlightBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Numpy基础操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T16:14:22+08:00">
+                2017-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                  <span class="post-meta-divider">|</span>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  706
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="numpy-基本属性"><a href="#numpy-基本属性" class="headerlink" title="numpy 基本属性"></a>numpy 基本属性</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">arr = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">                [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]],</span><br><span class="line">               dtype=np.int)  <span class="comment"># 默认int64</span></span><br><span class="line">print(arr)  <span class="comment"># 输出矩阵格式</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[1 2 3][2 3 4]]</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">print(<span class="string">'number of dim:'</span>, arr.ndim)  <span class="comment"># 维度&gt;&gt;&gt;2</span></span><br><span class="line">print(<span class="string">'shape:'</span>, arr.shape)  <span class="comment"># （行，列）</span></span><br><span class="line">print(<span class="string">'size:'</span>, arr.size)  <span class="comment"># 元素</span></span><br><span class="line">print(np.zeros((<span class="number">3</span>, <span class="number">4</span>)))  <span class="comment"># 生成 三行 四列 元素值=0 的矩阵</span></span><br><span class="line">print(np.ones((<span class="number">3</span>, <span class="number">4</span>)))  <span class="comment"># 生成 三行 四列 元素值=1 的矩阵</span></span><br><span class="line">print(np.arange(<span class="number">12</span>).reshape((<span class="number">3</span>, <span class="number">4</span>)))  <span class="comment"># 生成 三行 四列 元素值=0-11 的矩阵</span></span><br><span class="line">print(np.linspace(<span class="number">0</span>, <span class="number">22</span>, <span class="number">12</span>).reshape((<span class="number">3</span>, <span class="number">4</span>)))  <span class="comment"># 生成 三行 四列 元素值=0-22,分为12段 的矩阵</span></span><br></pre></td></tr></table></figure>
+<h3 id="Numpy-的基础运算1"><a href="#Numpy-的基础运算1" class="headerlink" title="Numpy 的基础运算1"></a>Numpy 的基础运算1</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>])</span><br><span class="line">b = np.arange(<span class="number">4</span>)</span><br><span class="line">print(a)  <span class="comment"># [10 19 28 37]</span></span><br><span class="line">print(b)  <span class="comment"># [0 1 2 3]</span></span><br><span class="line">c = a - b</span><br><span class="line">print(c)  <span class="comment"># [10 19 28 37]</span></span><br><span class="line">print(c &lt; <span class="number">20</span>)  <span class="comment"># [ True  True False False]</span></span><br></pre></td></tr></table></figure>
+<h3 id="矩阵相乘"><a href="#矩阵相乘" class="headerlink" title="矩阵相乘"></a>矩阵相乘</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line">b = np.arange(<span class="number">4</span>).reshape((<span class="number">2</span>, <span class="number">2</span>))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[1 2]</span></span><br><span class="line"><span class="string"> [3 4]][[0 1]</span></span><br><span class="line"><span class="string"> [2 3]]</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">c = a * b  <span class="comment"># 矩阵间对应位置逐个相乘</span></span><br><span class="line">c_dot = np.dot(a, b)  <span class="comment"># 矩阵相乘 横x竖 == a.dot(b)</span></span><br><span class="line">print(c)</span><br><span class="line">print(c_dot)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[ 0  2]</span></span><br><span class="line"><span class="string"> [ 6 12]][[ 4 7]</span></span><br><span class="line"><span class="string"> [ 8 15]]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<h3 id="随机生成0-1的矩阵并求最大最小和求和"><a href="#随机生成0-1的矩阵并求最大最小和求和" class="headerlink" title="随机生成0-1的矩阵并求最大最小和求和"></a>随机生成0-1的矩阵并求最大最小和求和</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = np.random.random((<span class="number">2</span>, <span class="number">4</span>))  <span class="comment"># 随机0-1的2x4矩阵</span></span><br><span class="line">print(a)</span><br><span class="line">print(np.sum(a))</span><br><span class="line">print(np.sum(a, axis=<span class="number">1</span>))  <span class="comment"># axis=1对行计算， axis=0对列计算</span></span><br><span class="line">print(np.min(a))</span><br><span class="line">print(np.max(a))</span><br></pre></td></tr></table></figure>
+<h3 id="Numpy-的基础运算2"><a href="#Numpy-的基础运算2" class="headerlink" title="Numpy 的基础运算2"></a>Numpy 的基础运算2</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">A = np.arange(<span class="number">2</span>, <span class="number">14</span>).reshape((<span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[ 2  3  4  5][ 6 7 8 9]</span></span><br><span class="line"><span class="string"> [10 11 12 13]]</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">print(np.argmin(A))  <span class="comment"># 最小值的索引 0</span></span><br><span class="line">print(np.argmax(A))  <span class="comment"># 最大值的索引 11</span></span><br><span class="line">print(np.mean(A))  <span class="comment"># 平均值 7.5</span></span><br><span class="line">print(np.cumsum(A))  <span class="comment"># 累加值 [ 2  5  9 14 20 27 35 44 54 65 77 90]</span></span><br><span class="line">print(np.diff(A))  <span class="comment"># [[1 1 1][1 1 1] [1 1 1]]</span></span><br><span class="line">print(np.nonzero(A))  <span class="comment"># 找非零 输出的很诡异</span></span><br><span class="line">print(np.sort(A))  <span class="comment"># 逐行排序</span></span><br><span class="line">print(np.clip(A, <span class="number">5</span>, <span class="number">9</span>))  <span class="comment"># 小于5的元素=5， 大于9的元素=9， 其他保留</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[5 5 5 5][6 7 8 9]</span></span><br><span class="line"><span class="string"> [9 9 9 9]]</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">print(np.transpose(A))  <span class="comment"># 反向翻转  == A.T</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[ 2  6 10][ 3 7 11]</span></span><br><span class="line"><span class="string"> [ 4  8 12][ 5 9 13]]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<h3 id="Numpy的索引"><a href="#Numpy的索引" class="headerlink" title="Numpy的索引"></a>Numpy的索引</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">A = np.arange(<span class="number">3</span>, <span class="number">15</span>).reshape((<span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[ 3  4  5  6][ 7 8 9 10]</span></span><br><span class="line"><span class="string"> [11 12 13 14]]</span></span><br><span class="line"><span class="string"> '''</span></span><br><span class="line">print(A[<span class="number">2</span>, <span class="number">1</span>])  <span class="comment"># 12 == A[2][1]</span></span><br><span class="line">print(A[<span class="number">1</span>, <span class="number">0</span>:<span class="number">2</span>])  <span class="comment"># [7 8]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> column <span class="keyword">in</span> A.T:  <span class="comment"># 返回列</span></span><br><span class="line">    print(column)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> A.flat:  <span class="comment"># 返回单个元素</span></span><br><span class="line">    print(item)</span><br></pre></td></tr></table></figure>
+<h3 id="Numpy-的array合并"><a href="#Numpy-的array合并" class="headerlink" title="Numpy 的array合并"></a>Numpy 的array合并</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">B = np.array([<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>])</span><br><span class="line">print(np.vstack((A, B)))  <span class="comment"># vertical上下合并</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[1 1 1][2 2 2]]</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">print(A[:, np.newaxis])  <span class="comment"># 在列增加维度</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[1][1]</span></span><br><span class="line"><span class="string"> [1]]</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">print(np.hstack((A[:, np.newaxis], B[:, np.newaxis])))  <span class="comment"># horizontal左右合并</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[1 2][1 2]</span></span><br><span class="line"><span class="string"> [1 2]]</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<h3 id="Numpy-的-array-分割"><a href="#Numpy-的-array-分割" class="headerlink" title="Numpy 的 array 分割"></a>Numpy 的 array 分割</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">A = np.arange(<span class="number">12</span>).reshape(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[[ 0  1  2  3][ 4 5 6 7]</span></span><br><span class="line"><span class="string"> [ 8  9 10 11]]</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">print(np.split(A, <span class="number">2</span>, axis=<span class="number">1</span>))  <span class="comment"># 对矩阵进行分割，分成两部分. 等量分割。</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[</span></span><br><span class="line"><span class="string">array([[0, 1],</span></span><br><span class="line"><span class="string">       [4, 5],</span></span><br><span class="line"><span class="string">       [8, 9]]), </span></span><br><span class="line"><span class="string">array([[ 2,  3],</span></span><br><span class="line"><span class="string">       [ 6,  7],</span></span><br><span class="line"><span class="string">       [10, 11]])</span></span><br><span class="line"><span class="string">       ]</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">print(np.array_split(A, <span class="number">3</span>, axis=<span class="number">1</span>))  <span class="comment"># 不等量分割</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">[</span></span><br><span class="line"><span class="string">array([[0, 1],</span></span><br><span class="line"><span class="string">       [4, 5],</span></span><br><span class="line"><span class="string">       [8, 9]]), </span></span><br><span class="line"><span class="string">array([[ 2],</span></span><br><span class="line"><span class="string">       [ 6],</span></span><br><span class="line"><span class="string">       [10]]), </span></span><br><span class="line"><span class="string">array([[ 3],</span></span><br><span class="line"><span class="string">       [ 7],</span></span><br><span class="line"><span class="string">       [11]])</span></span><br><span class="line"><span class="string">       ]</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="comment"># np.vsplit &amp; np.hsplit 同np.split(A, 2, axis=1)</span></span><br></pre></td></tr></table></figure>
+<p># </p>
+
+      
+    </div>
+    
+    
+    
+     <!-- 在每篇文章末尾统一添加“本文结束”标记 -->
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+   
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/矩阵运算/" rel="tag"><i class="fa fa-tag"></i> 矩阵运算</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/df4a57c5/" rel="next" title="常见算法的Python实现">
+                <i class="fa fa-chevron-left"></i> 常见算法的Python实现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/f915806d/" rel="prev" title="PythonWeb应用性能调优">
+                PythonWeb应用性能调优 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="http://pht1wbp11.bkt.clouddn.com/avatar.jpg" alt="阿斯顿发光">
+          <p class="site-author-name" itemprop="name">阿斯顿发光</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://mmbiz.qpic.cn/mmbiz_jpg/ibGeqiconkZdxMaYicMmtSRyQhxDickicpp9urianPVEYKXIt7H8fvm2jsibaiaKWmPTzA9RDz7yFr7QUbn39wraA8RV3Q/0?wx_fmt=jpeg" target="_blank" title="WeiXin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      WeiXin
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:astlight@outlook.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://astlight.github.io/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy-基本属性"><span class="nav-number">1.</span> <span class="nav-text">numpy 基本属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numpy-的基础运算1"><span class="nav-number">2.</span> <span class="nav-text">Numpy 的基础运算1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵相乘"><span class="nav-number">3.</span> <span class="nav-text">矩阵相乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机生成0-1的矩阵并求最大最小和求和"><span class="nav-number">4.</span> <span class="nav-text">随机生成0-1的矩阵并求最大最小和求和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numpy-的基础运算2"><span class="nav-number">5.</span> <span class="nav-text">Numpy 的基础运算2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numpy的索引"><span class="nav-number">6.</span> <span class="nav-text">Numpy的索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numpy-的array合并"><span class="nav-number">7.</span> <span class="nav-text">Numpy 的array合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Numpy-的-array-分割"><span class="nav-number">8.</span> <span class="nav-text">Numpy 的 array 分割</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018✔</span>
+  <span class="with-love">
+    <i class="kiss-wink-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">🛠阿斯顿发光🛠</span>
+</div>
+
+
+
+<!-- <div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+-->
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
